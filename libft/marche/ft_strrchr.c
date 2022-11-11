@@ -6,7 +6,7 @@
 /*   By: ode-cleb <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/08 20:04:36 by ode-cleb          #+#    #+#             */
-/*   Updated: 2022/11/08 20:14:31 by ode-cleb         ###   ########.fr       */
+/*   Updated: 2022/11/11 15:45:46 by ode-cleb         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,12 +14,12 @@
 
 char	*ft_strrchr(const char *s, int c)
 {
-	int	i;
+	int		i;
 	char	*str;
 
 	i = 0;
 	str = (char *)s;
-	while (str[i]!= '\0')
+	while (str[i] != '\0')
 		i++;
 	while (str[i] != c)
 	{

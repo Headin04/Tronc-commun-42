@@ -1,36 +1,46 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memset.c                                        :+:      :+:    :+:   */
+/*   ft_memmove.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ode-cleb <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/11/07 14:41:03 by ode-cleb          #+#    #+#             */
-/*   Updated: 2022/11/11 15:27:14 by ode-cleb         ###   ########.fr       */
+/*   Created: 2022/11/11 14:36:51 by ode-cleb          #+#    #+#             */
+/*   Updated: 2022/11/11 15:36:18 by ode-cleb         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	*ft_memset(void *s, int c, size_t n)
+void	*ft_memmove(void *dest, void *src, size_t n)
 {
 	size_t	i;
 
-	i = 0;
-	while (i != n)
+	if (dest > src)
 	{
-		((char *)s)[i] = c;
-		i++;
+		while (n > 0)
+		{
+			((unsigned char *)dest)[n - 1] = ((unsigned char *)src)[n - 1];
+			n--;
+		}
 	}
-	return (s);
+	else
+	{
+		i = 0;
+		while (i < n)
+		{
+			((unsigned char *)dest)[i] = ((unsigned char *)src)[i];
+			i++;
+		}
+	}		
+	return (dest);
 }
-
 /*
-#include <stdio.h>
-int	main()
+int main()
 {
-	char str[] = "onestpasbien";
+	char src[] = "salut";
 
-	printf("%s", (char *)ft_memset(str,'f', 2));
+//	printf("%s\n",(char *)ft_memmove(src + 1, src, 6));
+	printf("%s", (char *)memmove(src + 1, src, 7)); 
 }
 */

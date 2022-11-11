@@ -1,36 +1,50 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memset.c                                        :+:      :+:    :+:   */
+/*   ft_strlcat.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ode-cleb <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/11/07 14:41:03 by ode-cleb          #+#    #+#             */
-/*   Updated: 2022/11/11 15:27:14 by ode-cleb         ###   ########.fr       */
+/*   Created: 2022/11/08 18:17:58 by ode-cleb          #+#    #+#             */
+/*   Updated: 2022/11/11 15:41:24 by ode-cleb         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	*ft_memset(void *s, int c, size_t n)
+size_t	ft_strlcat(char *dest, char *src, size_t size)
 {
 	size_t	i;
+	size_t	j;
+	size_t	size1;
+	size_t	size2;
 
 	i = 0;
-	while (i != n)
+	j = 0;
+	size2 = ft_strlen(src);
+	while (dest[j] != '\0')
+		j++;
+	size1 = j;
+	if (size == 0 || size <= size1)
+		return (size2 + size);
+	while (src[i] && size - size1 - 1 > i)
 	{
-		((char *)s)[i] = c;
+		dest[j] = src[i];
 		i++;
+		j++;
 	}
-	return (s);
+	dest[j] = '\0';
+	return (size2 + size1);
 }
 
 /*
-#include <stdio.h>
 int	main()
 {
-	char str[] = "onestpasbien";
+	char	dest[]= "ravie";
+	char	src[]= "je suis";
 
-	printf("%s", (char *)ft_memset(str,'f', 2));
+	printf("%ld\n", strlcat(dest, src, 2));
+	printf("%ld\n", ft_strlcat(dest, src, 2));
+
 }
 */

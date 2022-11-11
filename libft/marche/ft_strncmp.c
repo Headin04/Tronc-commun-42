@@ -6,7 +6,7 @@
 /*   By: ode-cleb <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/09 10:38:13 by ode-cleb          #+#    #+#             */
-/*   Updated: 2022/11/09 12:09:37 by ode-cleb         ###   ########.fr       */
+/*   Updated: 2022/11/11 15:42:47 by ode-cleb         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ int	ft_strncmp(char *s1, char *s2, unsigned int n)
 	while (i < n && (s1[i] != '\0' || s2[i] != '\0'))
 	{
 		if (s1[i] != s2[i])
-			return (s1[i]- s2[i]);
+			return (s1[i] - s2[i]);
 		i++;
 	}
 	return (0);

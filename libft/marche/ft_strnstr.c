@@ -6,18 +6,17 @@
 /*   By: ode-cleb <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/09 13:26:10 by ode-cleb          #+#    #+#             */
-/*   Updated: 2022/11/09 15:40:51 by ode-cleb         ###   ########.fr       */
+/*   Updated: 2022/11/11 15:44:24 by ode-cleb         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-#include <bsd/string.h>
 
 char	*ft_strnstr(char *s1, char *s2, size_t n)
 {
 	size_t	i;
 	size_t	j;
-	
+
 	if (s2[0] == '\0')
 		return (s1);
 	i = 0;
@@ -36,7 +35,7 @@ char	*ft_strnstr(char *s1, char *s2, size_t n)
 	return (NULL);
 }
 
-
+/*
 #include <stdio.h>
 int	main()
 {
@@ -46,4 +45,4 @@ int	main()
 	printf ("%s\n", ft_strnstr(s1, s2, 9));
 	printf ("%s\n", strnstr(s1, s2, 9));
 }
-
+*/
