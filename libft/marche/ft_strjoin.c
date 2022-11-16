@@ -1,32 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlen.c                                        :+:      :+:    :+:   */
+/*   ft_strjoin.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ode-cleb <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/11/07 14:12:41 by ode-cleb          #+#    #+#             */
-/*   Updated: 2022/11/16 14:59:27 by ode-cleb         ###   ########.fr       */
+/*   Created: 2022/11/16 14:18:44 by ode-cleb          #+#    #+#             */
+/*   Updated: 2022/11/16 16:25:40 by ode-cleb         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-size_t	ft_strlen(const char *str)
+char	*ft_strjoin(char const *s1, char const *s2)
 {
-	size_t	i;
+	char	*s3;
+	size_t	size;
 
-	i = 0;
-	while (str[i] != '\0')
-		i++;
-	return (i);
+	size = ft_strlen(s1) + ft_strlen(s2);
+	s3 = (char *)malloc((size + 1) * sizeof(char));
+	if (s3 == NULL)
+		return (NULL);
+	else
+	{
+		ft_strlcpy(s3, s1, ft_strlen(s1) + 1);
+		ft_strlcat(s3, s2, size + 1);
+	}
+	return (s3);	
 }
-/*
-#include <stdio.h>
-int	main()
-{
-	char *str;
-	str =  "Badass";
-	printf("%d\n", ft_strlen(str));
-}
-*/

@@ -1,32 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlen.c                                        :+:      :+:    :+:   */
+/*   ft_calloc.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ode-cleb <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/11/07 14:12:41 by ode-cleb          #+#    #+#             */
-/*   Updated: 2022/11/16 14:59:27 by ode-cleb         ###   ########.fr       */
+/*   Created: 2022/11/15 15:31:41 by ode-cleb          #+#    #+#             */
+/*   Updated: 2022/11/15 16:26:03 by ode-cleb         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-size_t	ft_strlen(const char *str)
+void	*calloc(size_t m, size_t n)
 {
-	size_t	i;
+	size_t	mn;
+	void	*dest;
 
-	i = 0;
-	while (str[i] != '\0')
-		i++;
-	return (i);
+	mn = m * n;
+	if (m == '\0' || n == '\0')
+		return (NULL);
+	dest = malloc(mn);
+	if (dest == NULL)
+		return (NULL);
+	else
+		ft_bzero(dest, mn);
+	return(dest);
 }
-/*
-#include <stdio.h>
-int	main()
-{
-	char *str;
-	str =  "Badass";
-	printf("%d\n", ft_strlen(str));
-}
-*/
+
