@@ -1,32 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlen.c                                        :+:      :+:    :+:   */
+/*   ft_substr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ode-cleb <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/11/07 14:12:41 by ode-cleb          #+#    #+#             */
-/*   Updated: 2022/11/16 14:59:27 by ode-cleb         ###   ########.fr       */
+/*   Created: 2022/11/16 14:17:13 by ode-cleb          #+#    #+#             */
+/*   Updated: 2022/11/17 14:40:45 by ode-cleb         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-size_t	ft_strlen(const char *str)
+char *ft_substr(char const *s, unsigned int start, size_t len)
 {
-	size_t	i;
+	size_t	final_size;
+	char	*dest;
 
-	i = 0;
-	while (str[i] != '\0')
-		i++;
-	return (i);
+	dest = NULL;
+	if (s != NULL)
+	{
+		if (ft_strlen(s) - start >= len)
+			final_size = len;
+		else
+			final_size = ft_strlen(s) - start;
+		dest = (char *)malloc((final_size +1) * sizeof(char));
+		if (dest != NULL)
+			ft_strlcpy(dest, s + start, final_size + 1);
+	}
+	return(dest);	
 }
-/*
-#include <stdio.h>
-int	main()
-{
-	char *str;
-	str =  "Badass";
-	printf("%d\n", ft_strlen(str));
-}
-*/
