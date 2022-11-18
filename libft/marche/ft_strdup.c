@@ -1,32 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlen.c                                        :+:      :+:    :+:   */
+/*   ft_strdup.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ode-cleb <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/11/07 14:12:41 by ode-cleb          #+#    #+#             */
-/*   Updated: 2022/11/16 14:59:27 by ode-cleb         ###   ########.fr       */
+/*   Created: 2022/11/18 11:23:56 by ode-cleb          #+#    #+#             */
+/*   Updated: 2022/11/18 11:24:01 by ode-cleb         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-size_t	ft_strlen(const char *str)
+char    *ft_strdup(const char *s)
 {
-	size_t	i;
+    size_t  len;
+    char    *dest;
 
-	i = 0;
-	while (str[i] != '\0')
-		i++;
-	return (i);
+    dest = NULL;
+    len = ft_strlen(s);
+    dest = (char *)malloc((len + 1) * sizeof(char));
+       if (dest != NULL)
+            ft_strlcpy(dest, s, len + 1);
+    return (dest);
 }
-/*
-#include <stdio.h>
-int	main()
-{
-	char *str;
-	str =  "Badass";
-	printf("%d\n", ft_strlen(str));
-}
-*/
