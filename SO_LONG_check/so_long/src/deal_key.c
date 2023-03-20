@@ -6,7 +6,7 @@
 /*   By: ode-cleb <ode-cleb@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/16 12:39:40 by ode-cleb          #+#    #+#             */
-/*   Updated: 2023/03/20 13:41:01 by ode-cleb         ###   ########.fr       */
+/*   Updated: 2023/03/20 16:44:25 by ode-cleb         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,6 @@ void	deal_w_and_s(int key, t_win *win)
 {
 	if (key == W && win->map.y_p >= 1)
 	{
-		ft_printf("up\n");
 		--win->map.y_p;
 		if (check_if_wall(win) == true && check_if_exit_free(win) == false)
 			replace_player_up(win);
@@ -40,7 +39,6 @@ void	deal_w_and_s(int key, t_win *win)
 	}
 	else if (key == S && win->map.y_p <= win->map.nb_line - 3)
 	{
-		ft_printf("down\n");
 		++win->map.y_p;
 		if (check_if_wall(win) == true && check_if_exit_free(win) == false)
 			replace_player_down(win);
@@ -53,7 +51,6 @@ void	deal_d_and_a(int key, t_win *win)
 {
 	if (key == D && win->map.x_p <= win->map.len_line - 1)
 	{
-		ft_printf("right\n");
 		++win->map.x_p;
 		if (check_if_wall(win) == true && check_if_exit_free(win) == false)
 			replace_player_right(win);
@@ -62,7 +59,6 @@ void	deal_d_and_a(int key, t_win *win)
 	}
 	else if (key == A && win->map.x_p >= 1)
 	{
-		ft_printf("left\n");
 		--win->map.x_p;
 		if (check_if_wall(win) == true && check_if_exit_free(win) == false)
 			replace_player_left(win);
