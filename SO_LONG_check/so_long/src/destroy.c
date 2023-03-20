@@ -6,11 +6,11 @@
 /*   By: ode-cleb <ode-cleb@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/16 20:17:06 by ode-cleb          #+#    #+#             */
-/*   Updated: 2023/03/17 14:56:01 by ode-cleb         ###   ########.fr       */
+/*   Updated: 2023/03/20 14:32:48 by ode-cleb         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-# include "so_long.h"
+#include "so_long.h"
 
 int	destroy(t_win *win)
 {
@@ -33,15 +33,15 @@ int	destroy(t_win *win)
 	exit(EXIT_SUCCESS);
 }
 
-void    destroy_free(t_win *win)
+void	destroy_free(t_win *win)
 {
-    while (win->map.nb_line > 0)
-    {
-        free(win->map.map_in_tab[win->map.nb_line - 1]);
-        free(win->map.map_cloned[win->map.nb_line - 1]);
-        win->map.nb_line--;
-    }
-    free(win->map.map_in_tab);
-    free(win->map.map_cloned);
-    free(win->map.buf);
+	while (win->map.nb_line > 0)
+	{
+		free(win->map.map_in_tab[win->map.nb_line - 1]);
+		free(win->map.map_cloned[win->map.nb_line - 1]);
+		win->map.nb_line--;
+	}
+	free(win->map.map_in_tab);
+	free(win->map.map_cloned);
+	free(win->map.buf);
 }

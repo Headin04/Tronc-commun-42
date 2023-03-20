@@ -6,11 +6,11 @@
 /*   By: ode-cleb <ode-cleb@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/16 20:17:06 by ode-cleb          #+#    #+#             */
-/*   Updated: 2023/03/20 13:12:19 by ode-cleb         ###   ########.fr       */
+/*   Updated: 2023/03/20 14:30:31 by ode-cleb         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-# include "so_long_bonus.h"
+#include "so_long_bonus.h"
 
 int	destroy_bonus(t_win *win)
 {
@@ -46,15 +46,15 @@ void	destroy_img_bonus(t_win *win)
 		mlx_destroy_image(win->mlx_ptr, win->img_ptr_tile4);
 }
 
-void    destroy_free(t_win *win)
+void	destroy_free(t_win *win)
 {
-    while (win->map.nb_line > 0)
-    {
-        free(win->map.map_in_tab[win->map.nb_line - 1]);
-        free(win->map.map_cloned[win->map.nb_line - 1]);
-        win->map.nb_line--;
-    }
-    free(win->map.map_in_tab);
-    free(win->map.map_cloned);
-    free(win->map.buf);
+	while (win->map.nb_line > 0)
+	{
+		free(win->map.map_in_tab[win->map.nb_line - 1]);
+		free(win->map.map_cloned[win->map.nb_line - 1]);
+		win->map.nb_line--;
+	}
+	free(win->map.map_in_tab);
+	free(win->map.map_cloned);
+	free(win->map.buf);
 }

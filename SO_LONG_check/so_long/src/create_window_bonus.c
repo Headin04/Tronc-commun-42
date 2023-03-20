@@ -6,7 +6,7 @@
 /*   By: ode-cleb <ode-cleb@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/16 15:07:34 by ode-cleb          #+#    #+#             */
-/*   Updated: 2023/03/20 12:54:27 by ode-cleb         ###   ########.fr       */
+/*   Updated: 2023/03/20 14:20:55 by ode-cleb         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -66,8 +66,8 @@ void	open_img(t_win *win)
 int	create_window(t_win *win)
 {
 	win->mlx_ptr = mlx_init();
-	if(win->mlx_ptr == NULL)
-		return(0);
+	if (win->mlx_ptr == NULL)
+		return (0);
 	win->win_ptr = mlx_new_window(win->mlx_ptr, (win->map.len_line) * 64,
 			(win->map.nb_line - 1) * 64, "so_long");
 	open_img(win);
