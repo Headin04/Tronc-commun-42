@@ -6,7 +6,7 @@
 /*   By: ode-cleb <ode-cleb@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/17 16:45:32 by ode-cleb          #+#    #+#             */
-/*   Updated: 2023/03/20 14:19:53 by ode-cleb         ###   ########.fr       */
+/*   Updated: 2023/03/20 14:43:27 by ode-cleb         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,7 +34,7 @@ void	put_anim_to_win(t_win *win)
 	mlx_do_sync(win->mlx_ptr);
 	mlx_put_image_to_window(win->mlx_ptr, win->win_ptr, win->img_ptr_tile2,
 		win->map.x_p * 64, win->map.y_p * 64);
-	usleep(200000);
+	usleep(50000);
 	mlx_do_sync(win->mlx_ptr);
 	mlx_put_image_to_window(win->mlx_ptr, win->win_ptr, win->img_ptr_tile3,
 		win->map.x_p * 64, win->map.y_p * 64);
@@ -42,6 +42,6 @@ void	put_anim_to_win(t_win *win)
 	mlx_do_sync(win->mlx_ptr);
 	mlx_put_image_to_window(win->mlx_ptr, win->win_ptr, win->img_ptr_tile4,
 		win->map.x_p * 64, win->map.y_p * 64);
-	usleep(200000);
+	usleep(50000);
 	mlx_do_sync(win->mlx_ptr);
 }
