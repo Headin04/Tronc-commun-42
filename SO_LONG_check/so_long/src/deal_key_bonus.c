@@ -1,16 +1,16 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   deal_key.c                                         :+:      :+:    :+:   */
+/*   deal_key_bonus.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ode-cleb <ode-cleb@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/16 12:39:40 by ode-cleb          #+#    #+#             */
-/*   Updated: 2023/03/20 12:38:00 by ode-cleb         ###   ########.fr       */
+/*   Updated: 2023/03/17 18:03:32 by ode-cleb         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "so_long.h"
+#include "so_long_bonus.h"
 
 bool	check_if_wall(t_win *win)
 {
@@ -82,8 +82,10 @@ int	deal_key(int key, t_win *win)
 			win->map.x_e * 64, win->map.y_e * 64);
 	if (key == 65307 || (win->map.x_p == win->map.x_e
 			&& win->map.y_p == win->map.y_e))
-		destroy(win);
+		destroy_bonus(win);
 	ft_putnbr_fd(win->count_move, 1);
 	ft_putchar_fd('\n', 1);
+	if (win->n != -1)
+		put_count_to_win(win);
 	return (0);
 }

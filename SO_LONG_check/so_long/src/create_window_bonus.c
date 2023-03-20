@@ -1,16 +1,16 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   create_window.c                                    :+:      :+:    :+:   */
+/*   create_window_bonus.c                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ode-cleb <ode-cleb@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/16 15:07:34 by ode-cleb          #+#    #+#             */
-/*   Updated: 2023/03/20 12:37:09 by ode-cleb         ###   ########.fr       */
+/*   Updated: 2023/03/20 12:54:27 by ode-cleb         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "so_long.h"
+#include "so_long_bonus.h"
 
 void	mlx_pitw(int x, int y, t_win *win, void *img_ptr)
 {
@@ -61,7 +61,6 @@ void	open_img(t_win *win)
 			"./img/exit/exit_1.xpm", &win->width, &win->height);
 	win->img_ptr_exit_2 = mlx_xpm_file_to_image(win->mlx_ptr,
 			"./img/exit/exit_2.xpm", &win->width, &win->height);
-	check_xpm(win);
 }
 
 int	create_window(t_win *win)
@@ -73,8 +72,9 @@ int	create_window(t_win *win)
 			(win->map.nb_line - 1) * 64, "so_long");
 	open_img(win);
 	put_img_to_win(win);
+	mlx_loop_hook(win->mlx_ptr, open_anim, win);
 	mlx_key_hook(win->win_ptr, deal_key, win);
-	mlx_hook(win->win_ptr, 17, (1L << 17), destroy, win);
+	mlx_hook(win->win_ptr, 17, (1L << 17), destroy_bonus, win);
 	mlx_loop(win->mlx_ptr);
 	return (0);
 }
